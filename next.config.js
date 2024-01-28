@@ -22,6 +22,8 @@ module.exports = withBundleAnalyzer({
       'pbs.twimg.com',
       'abs.twimg.com',
       's3.us-west-2.amazonaws.com',
+      'https://utteranc.es/client.js',
+      'https://blog.jangdu.co.kr',
       'transitivebullsh.it'
     ],
     formats: ['image/avif', 'image/webp'],

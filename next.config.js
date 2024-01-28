@@ -3,6 +3,15 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 })
 
+const debug = process.env.NODE_ENV !== 'production'
+const repository = 'https://github.com/jangdu/blog'
+
+const nextConfig = {
+  reactStrictMode: true,
+  assetPrefix: !debug ? `/${repository}/` : '', // production 일때 prefix 경로
+  trailingSlash: true // 빌드 시 폴더 구조 그대로 생성하도록
+}
+
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
   images: {
@@ -17,6 +26,7 @@ module.exports = withBundleAnalyzer({
     ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    ...nextConfig
   }
 })

@@ -1,0 +1,45 @@
+name: main branch auto ci process script
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest # 실행될 인스턴스 OS와 버전
+    strategy:
+      matrix:
+        node-versions: [18.x]
+
+    steps:
+      - name: Checkout source code.
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies and Build
+        run: |
+          cd blog
+          yarn install --force
+          yarn run build
+
+      - name: Copy files to remote server
+        run: |
+          mkdir -p /home/runner/.ssh && touch /home/runner/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.REMOTE_IP }} >> ~/.ssh/known_hosts
+          sshpass -p ${{ secrets.REMOTE_PASSWORD }} ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_IP }} 'cd /home/jangdu/blog && rm -rf ./next'
+          sshpass -p ${{ secrets.REMOTE_PASSWORD }} scp -r ./blog/.next ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_IP }}:/home/jangdu/blog
+
+      - name: Deploy to remote server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.REMOTE_IP }}
+          username: ${{ secrets.REMOTE_USER }}
+          password: ${{ secrets.REMOTE_PASSWORD }}
+          port: ${{ secrets.REMOTE_SSH_PORT }}
+          script: |
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            nvm use v21.5.0
+            cd /home/jangdu/blog && git pull origin main
+            yarn install --force
+            cd /home/jangdu/blog && pm2 reload blog || pm2 start ecosystem.config.js

@@ -9,12 +9,12 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
-  author: 'Travis Fischer',
+  name: 'jangdu-blog',
+  domain: 'https://blog.jangdu.co.kr',
+  author: 'jangdu',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'typescript-developer-jangdu',
 
   // social usernames (optional)
   // twitter: 'transitive_bs',

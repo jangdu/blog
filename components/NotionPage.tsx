@@ -25,6 +25,7 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
+import { ReactUtterances } from './ReactUtterances'
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
@@ -241,6 +242,20 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
+  let comments: React.ReactNode = null
+
+  if (block.type === 'page' && block.parent_table === 'collection') {
+    comments = (
+      <ReactUtterances
+        repo='jangdu/blog-comments'
+        issueMap='issue-term'
+        issueTerm='title'
+        label='blog'
+        theme='preferred-color-scheme'
+      />
+    )
+  }
+
   return (
     <>
       <PageHead
@@ -277,6 +292,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
+        pageFooter={comments}
         footer={footer}
       />
     </>

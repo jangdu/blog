@@ -4,6 +4,10 @@
   }
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .container {
   position: absolute;
   top: 0;

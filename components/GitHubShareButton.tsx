@@ -1,14 +1,15 @@
 import * as React from 'react'
+import Link from 'next/link'
 
 import styles from './styles.module.css'
 
 export const GitHubShareButton: React.FC = () => {
   return (
-    <a
-      href='https://github.com/transitive-bullshit/nextjs-notion-starter-kit'
+    <Link
+      href='https://github.com/jangdu'
       target='_blank'
       rel='noopener noreferrer'
-      className={styles.githubCorner}
+      className={styles.githubCorner + 'github-corner'}
       aria-label='View source on GitHub'
     >
       <svg
@@ -43,6 +44,6 @@ export const GitHubShareButton: React.FC = () => {
           className={styles.octoBody}
         />
       </svg>
-    </a>
+    </Link>
   )
 }

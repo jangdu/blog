@@ -9,7 +9,7 @@
 
 .notion {
   --notion-max-width: 720px;
-  --notion-header-height: 54px;
+  --notion-header-height: 72px;
 }
 
 .notion-frame {
@@ -47,6 +47,10 @@
   max-width: 1100px;
   margin: 0 auto;
   overflow-x: auto;
+
+  font-size: 18px;
+
+  align-items: center;
 }
 
 .notion-nav-header-rhs {
@@ -400,6 +404,6 @@
   color: var(--fg-color-2);
 }
 
-.notion-equation.notion-equation-block{
+.notion-equation.notion-equation-block {
   align-items: center;
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { GiscusWidget } from 'giscus'
+
 import styles from './styles.module.css'
 
 export type MappingType =
@@ -11,8 +13,8 @@ export type MappingType =
   | 'issue-term'
 
 export type Theme =
-  | 'github-light'
-  | 'github-dark'
+  | 'light'
+  | 'dark'
   | 'preferred-color-scheme'
   | 'github-dark-orange'
   | 'icy-dark'
@@ -60,12 +62,21 @@ export class ReactUtterances extends React.Component<
   componentDidMount(): void {
     const { repo, issueMap, issueTerm, issueNumber, label, theme } = this.props
     const scriptElement = document.createElement('script')
-    scriptElement.src = 'https://utteranc.es/client.js'
+    scriptElement.src = 'https://giscus.app/client.js'
+    scriptElement.setAttribute('data-repo', repo)
+    scriptElement.setAttribute('data-repo-id', 'R_kgDOLKn9nQ')
+    scriptElement.setAttribute('data-category', 'Comments')
+    scriptElement.setAttribute('data-category-id', 'DIC_kwDOLKn9nc4CcwCC')
+    scriptElement.setAttribute('data-mapping', 'pathname')
+    scriptElement.setAttribute('data-strict', '0')
+    scriptElement.setAttribute('data-reactions-enabled', '1')
+    scriptElement.setAttribute('data-emit-metadata', '0')
+    scriptElement.setAttribute('data-input-position', 'bottom')
+    scriptElement.setAttribute('data-theme', theme)
+    scriptElement.setAttribute('data-lang', 'ko')
+    scriptElement.setAttribute('crossorigin', 'anonymous')
     scriptElement.async = true
     scriptElement.defer = true
-    scriptElement.setAttribute('repo', repo)
-    scriptElement.setAttribute('crossorigin', 'annonymous')
-    scriptElement.setAttribute('theme', theme)
     scriptElement.onload = () => this.setState({ pending: false })
 
     if (label) {
@@ -88,7 +99,7 @@ export class ReactUtterances extends React.Component<
     return (
       <div className={styles.comments}>
         <div className={styles.utterances} ref={this.reference}>
-          {this.state.pending && <p>Loading Comments...</p>}
+          <>{this.state.pending && <p>Loading Comments...</p>}</>
         </div>
       </div>
     )

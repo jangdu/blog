@@ -251,7 +251,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         issueMap='issue-term'
         issueTerm='title'
         label='blog'
-        theme='preferred-color-scheme'
+        theme={isDarkMode ? 'dark' : 'light'}
       />
     )
   }

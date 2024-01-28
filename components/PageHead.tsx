@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
 
 import * as config from '@/lib/config'
 import * as types from '@/lib/types'
@@ -28,15 +29,36 @@ export const PageHead: React.FC<
         name='viewport'
         content='width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover'
       />
-
-      <meta name='apple-mobile-web-app-capable' content='yes' />
-      <meta
-        name='apple-mobile-web-app-status-bar-style'
-        content='black'
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=G-3JTW8VTS4L`}
+        strategy='afterInteractive'
       />
 
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fefffe" key="theme-color-light"/>
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2d3439" key="theme-color-dark"/>
+      <Script strategy='afterInteractive'>
+        {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3JTW8VTS4L', {
+      page_path: window.location.pathname,
+    });
+  `}
+      </Script>
+      <meta name='apple-mobile-web-app-capable' content='yes' />
+      <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+
+      <meta
+        name='theme-color'
+        media='(prefers-color-scheme: light)'
+        content='#fefffe'
+        key='theme-color-light'
+      />
+      <meta
+        name='theme-color'
+        media='(prefers-color-scheme: dark)'
+        content='#2d3439'
+        key='theme-color-dark'
+      />
 
       <meta name='robots' content='index,follow' />
       <meta property='og:type' content='website' />

@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { GiscusWidget } from 'giscus'
-
 import styles from './styles.module.css'
 
 export type MappingType =

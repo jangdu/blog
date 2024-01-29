@@ -19,6 +19,7 @@ import 'styles/notion.css'
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
 
+// analytics 파일을 만들어야 함
 import { bootstrap } from '@/lib/bootstrap-client'
 import {
   fathomConfig,
@@ -28,12 +29,28 @@ import {
   posthogId
 } from '@/lib/config'
 
+import { initGA, logPageView } from '../utils/analytics'
+
 if (!isServer) {
   bootstrap()
 }
 
+declare global {
+  interface Window {
+    GA_INITIALIZED: boolean
+  }
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
+
+  React.useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
+  }, [])
 
   React.useEffect(() => {
     function onRouteChangeComplete() {

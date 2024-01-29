@@ -30,20 +30,22 @@ export const PageHead: React.FC<
         content='width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover'
       />
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=G-3JTW8VTS4L`}
+        async
+        src='https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_CODE'
+      ></Script>
+      <Script
         strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3JTW8VTS4L', {
+          page_path: window.location.pathname,
+        });
+      `
+        }}
       />
-
-      <Script strategy='afterInteractive'>
-        {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3JTW8VTS4L', {
-      page_path: window.location.pathname,
-    });
-  `}
-      </Script>
       <meta name='apple-mobile-web-app-capable' content='yes' />
       <meta name='apple-mobile-web-app-status-bar-style' content='black' />
 

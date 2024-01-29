@@ -14,6 +14,7 @@ module.exports = withBundleAnalyzer({
       'abs.twimg.com',
       's3.us-west-2.amazonaws.com',
       'https://utteranc.es/client.js',
+      'https://www.googletagmanager.com',
       'https://blog.jangdu.co.kr',
       'https://giscus.app',
       'transitivebullsh.it'

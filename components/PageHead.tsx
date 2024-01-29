@@ -31,7 +31,7 @@ export const PageHead: React.FC<
       />
       <Script
         async
-        src='https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_CODE'
+        src='https://www.googletagmanager.com/gtag/js?id=G-3JTW8VTS4L'
       ></Script>
       <Script
         strategy='afterInteractive'

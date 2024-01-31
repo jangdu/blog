@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
             ></meta>
             <meta
               property='og:image'
-              content='https://opengraph.b-cdn.net/production/documents/63df4ab4-f220-44f0-8f98-81aa3978cf03.jpg?token=2gYeGKWMbt2R2tsngBepMexDn-3HfX59oO7VQNkffhg&height=1600&width=1200&expires=33242536766'
+              content='https://res.cloudinary.com/dyhnnmhcf/image/upload/v1706710430/07FE9B2A-F875-4E4D-8E5E-C56DB3613C3A_1_105_c_ft7bhh.jpg'
             ></meta>
 
             {/* <!-- Twitter Meta Tags --> */}
@@ -53,7 +53,7 @@ export default class MyDocument extends Document {
             ></meta>
             <meta
               name='twitter:image'
-              content='https://opengraph.b-cdn.net/production/documents/63df4ab4-f220-44f0-8f98-81aa3978cf03.jpg?token=2gYeGKWMbt2R2tsngBepMexDn-3HfX59oO7VQNkffhg&height=1600&width=1200&expires=33242536766'
+              content='https://res.cloudinary.com/dyhnnmhcf/image/upload/v1706710430/07FE9B2A-F875-4E4D-8E5E-C56DB3613C3A_1_105_c_ft7bhh.jpg'
             >
               {/* <!-- Meta Tags Generated via https://www.opengraph.xyz --> */}
             </meta>

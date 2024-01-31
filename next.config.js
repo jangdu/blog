@@ -16,6 +16,7 @@ module.exports = withBundleAnalyzer({
       'https://utteranc.es/client.js',
       'https://www.googletagmanager.com',
       'https://blog.jangdu.co.kr',
+      'https://console.cloudinary.com/',
       'https://giscus.app',
       'transitivebullsh.it'
     ],

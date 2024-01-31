@@ -33,6 +33,7 @@ export const PageHead: React.FC<
         async
         src='https://www.googletagmanager.com/gtag/js?id=G-3JTW8VTS4L'
       ></Script>
+
       <Script
         strategy='afterInteractive'
         dangerouslySetInnerHTML={{

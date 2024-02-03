@@ -18,46 +18,6 @@ export default class MyDocument extends Document {
             />
 
             <link rel='manifest' href='/manifest.json' />
-
-            {/* <!-- HTML Meta Tags --> */}
-            <title>jangdu</title>
-            <meta
-              name='description'
-              content='typescript-developer-jangdu'
-            ></meta>
-
-            {/* <!-- Facebook Meta Tags --> */}
-            <meta property='og:url' content='https://blog.jangdu.co.kr'></meta>
-            <meta property='og:type' content='website'></meta>
-            <meta property='og:title' content='jangdu'></meta>
-            <meta
-              property='og:description'
-              content='typescript-developer-jangdu'
-            ></meta>
-            <meta
-              property='og:image'
-              content='https://res.cloudinary.com/dyhnnmhcf/image/upload/v1706710430/07FE9B2A-F875-4E4D-8E5E-C56DB3613C3A_1_105_c_ft7bhh.jpg'
-            ></meta>
-
-            {/* <!-- Twitter Meta Tags --> */}
-            <meta name='twitter:card' content='summary_large_image'></meta>
-            <meta property='twitter:domain' content='blog.jangdu.co.kr'></meta>
-            <meta
-              property='twitter:url'
-              content='https://blog.jangdu.co.kr'
-            ></meta>
-            <meta name='twitter:title' content='jangdu'></meta>
-            <meta
-              name='twitter:description'
-              content='typescript-developer-jangdu'
-            ></meta>
-            <meta
-              name='twitter:image'
-              content='https://res.cloudinary.com/dyhnnmhcf/image/upload/v1706710430/07FE9B2A-F875-4E4D-8E5E-C56DB3613C3A_1_105_c_ft7bhh.jpg'
-            >
-              {/* <!-- Meta Tags Generated via https://www.opengraph.xyz --> */}
-            </meta>
-
             {/* <!-- Google Tag Manager --> */}
             <script
               dangerouslySetInnerHTML={{

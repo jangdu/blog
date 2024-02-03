@@ -4,6 +4,26 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { IconContext } from '@react-icons/all-files'
 
 export default class MyDocument extends Document {
+  componentDidMount() {
+    // 스크립트 추가
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-L6F2L44ZWQ'
+    document.head.appendChild(script)
+
+    // 스크립트 로드 후 초기화 스크립트 추가
+    script.onload = () => {
+      const gtagScript = document.createElement('script')
+      gtagScript.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L6F2L44ZWQ');
+      `
+      document.head.appendChild(gtagScript)
+    }
+  }
+
   render() {
     return (
       <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>

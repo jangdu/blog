@@ -29,24 +29,6 @@ export const PageHead: React.FC<
         name='viewport'
         content='width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover'
       />
-      <Script
-        async
-        src='https://www.googletagmanager.com/gtag/js?id=G-3JTW8VTS4L'
-      ></Script>
-
-      <Script
-        strategy='afterInteractive'
-        dangerouslySetInnerHTML={{
-          __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-3JTW8VTS4L', {
-          page_path: window.location.pathname,
-        });
-      `
-        }}
-      />
       <meta name='apple-mobile-web-app-capable' content='yes' />
       <meta name='apple-mobile-web-app-status-bar-style' content='black' />
 
@@ -113,6 +95,23 @@ export const PageHead: React.FC<
       <meta property='og:title' content={title} />
       <meta name='twitter:title' content={title} />
       <title>{title}</title>
+
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=G-L6F2L44ZWQ`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L6F2L44ZWQ', {
+              page_path: window.location.pathname,
+            });
+          `
+        }}
+      />
     </Head>
   )
 }

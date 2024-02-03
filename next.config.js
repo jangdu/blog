@@ -5,6 +5,19 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
+  async headers() {
+    return [
+      {
+        source: '/(.*)', // 모든 경로에 대한 설정
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*' // 모든 도메인에 대해 접근 허용
+          }
+        ]
+      }
+    ]
+  },
   images: {
     domains: [
       'www.notion.so',
@@ -16,6 +29,7 @@ module.exports = withBundleAnalyzer({
       'https://utteranc.es/client.js',
       'https://www.googletagmanager.com',
       'https://blog.jangdu.co.kr',
+      'https://www.google-analytics.com',
       'https://console.cloudinary.com/',
       'https://giscus.app',
       'transitivebullsh.it'

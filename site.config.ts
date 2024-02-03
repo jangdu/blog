@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'jangdu-blog',
-  domain: 'https://blog.jangdu.co.kr',
+  domain: 'blog.jangdu.me',
   author: 'jangdu',
 
   // open graph metadata (optional)

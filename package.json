@@ -24,7 +24,7 @@
     "test:prettier": "prettier '**/*.{js,jsx,ts,tsx}' --check",
     "build": "next build",
     "predeploy": "yarn run build",
-    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "deploy": "vercel deploy"
   },
   "dependencies": {
     "@fisch0920/use-dark-mode": "^2.4.0",
@@ -55,7 +55,8 @@
     "react-notion-x": "^6.15.6",
     "react-tweet-embed": "^2.0.0",
     "react-use": "^17.4.2",
-    "rss": "^1.2.2"
+    "rss": "^1.2.2",
+    "vercel": "^33.4.1"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.3.1",

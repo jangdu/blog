@@ -96,11 +96,11 @@ export const PageHead: React.FC<
       <meta name='twitter:title' content={title} />
       <title>{title}</title>
 
-      <script
+      <Script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=G-L6F2L44ZWQ`}
       />
-      <script
+      <Script
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];

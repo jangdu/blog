@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
             />
             <meta
               name='naver-site-verification'
-              content='7edfd7666487628f1717cf8f5697663662ee101a'
+              content='bfa154680e471f011526967b5b77af3091abe320'
             />
 
             {/* <!-- End Google Tag Manager --> */}

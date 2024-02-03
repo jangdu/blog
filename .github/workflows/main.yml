@@ -1,5 +1,4 @@
 # name: main branch auto ci process script
-
 # on:
 #   push:
 #     branches: [main]

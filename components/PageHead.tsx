@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Head from 'next/head'
-import Script from 'next/script'
 
 import * as config from '@/lib/config'
 import * as types from '@/lib/types'

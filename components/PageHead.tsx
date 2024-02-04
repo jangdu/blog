@@ -96,22 +96,8 @@ export const PageHead: React.FC<
       <meta name='twitter:title' content={title} />
       <title>{title}</title>
 
-      <Script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=G-L6F2L44ZWQ`}
-      />
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-L6F2L44ZWQ', {
-              page_path: window.location.pathname,
-            });
-          `
-        }}
-      />
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=G-L6F2L44ZWQ`} /> 
+      <script dangerouslySetInnerHTML={{ __html: ` window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-L6F2L44ZWQ', { page_path: window.location.pathname, }); `, }} />
     </Head>
   )
 }
